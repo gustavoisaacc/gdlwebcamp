@@ -122,8 +122,51 @@ textarea {
         width: 95%;
       }
     }
+    .seccion{
+      padding: 30px 0;
+    }
+    .seccion p{
+      font-size: 1.2em;
+      text-align: center;
+    }
+
     h2{
       font-family: var(--funte1);
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 2.4em;
+    }
+    h2::after{
+      content: '';
+      margin: 0 auto;
+      background-image: url('../img/separador.png');
+      height: 30px;
+      width: 100px;
+      display: block;
+    }
+    h3{
+      font-size: 1.6em;
+      color: var(--color-primario);
+      font-family: var(--funte2);
+      margin: 0;
+    }
+    .button{
+      display: inline-block;
+      font-size: 1.2em;
+      font-family: var(--funte1);
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: bold;
+      color: #fff;
+      background: var(--color-primario);
+      margin-top: 20px;
+      padding: 10px 40px;
+    }
+    .button:hover{
+      background: #e33000;
+    }
+    .float-right{
+      float: right;
     }
     /* css header */
     .hero{
@@ -172,7 +215,7 @@ textarea {
       text-transform: uppercase;
     }
     .informacion-evento p i{
-      color: var(var(--color-primario));
+      color: var(--color-primario);
       font-size: 2.4rem;
       margin-right: .3rem;
     }
@@ -221,7 +264,9 @@ textarea {
       font-family: var(--funte1);
       font-size: 1.4rem;
       text-transform: uppercase;
-      transition: all .3s ease;
+      display: block;
+      width: 100%;
+      text-align: center;
     }
     .navegacion-principal a:hover{
       background-color: var(--color-primario);
@@ -239,17 +284,136 @@ textarea {
         display: block;
         width: 67%;
         float: right;
-        text-align: right;
-      
+        text-align: right;  
+        transition: all .3s ease;  
       }
       .navegacion-principal a{
         line-height: 50px;
         padding: 10px;
+        font-size: 1rem;
+        display: inline;
+       
+      }
+    }
+    @media (min-width: 920px){
+      .navegacion-principal a{
+        line-height: 50px;
+        padding: 10px;
+        font-size: 1.4rem;
+      }
+    }
+    /* menu telefono */
+    .menu-movil{
+      width: 50px;
+      display: block;
+      margin-top: -65px;
+      float: right;
+      text-align: right;
+      cursor: pointer;
+      transform: translateY(50%);
+    }
+    @media (min-width: 485px){
+      .menu-movil{
+        margin-top: -75px;
+      }
+    }
 
+    .menu-movil span{
+      height: 8px;
+      background-color: white;
+      margin-bottom: 6px;
+      display: block;
+    }
+    @media (min-width: 768px){
+      .menu-movil{
+        display: none;
+      }
+    }
+
+    /* seccion video y tallere */
+    section.programa{
+      position: relative;
+    }
+    .contenedor-video{
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+    /* .contenedor-video video{
+      width: 100%;
+    } */
+
+    .comtenido-programa{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .programa-evento{
+      background: rgba(255, 255, 255, .8);
+      padding: 15px;
+      margin-top: 100px;
+    }
+    @media (min-width: 768px){
+      .programa-evento{
+        width: 70%;
+      }
+    }
+    @media (min-width: 992px){
+      .programa-evento{
+        width: 50%;
+      }
+    }
+    .menu-talleres{
+      width: 100%;
+      border-bottom: 1px solid var(--color-primario);
+      padding-bottom: 10px;
+    }
+    .menu-talleres a{
+      text-decoration: none;
+      font-family: var(--funte1);
+      display: block;
+      text-align: center;
+      color: #000;
+      margin-bottom: 10px;
+    }
+    @media (min-width: 768px){
+      .menu-talleres{
+        display: table;
+      }
+      .menu-talleres a{
+        display: table-cell;
       }
 
     }
-    
+    .menu-talleres a i,
+    .detalle-evento p i{
+      margin-right: 5px;
+      color: var(--color-primario);
+      font-size: 1.5rem;
+    }
+
+    /* detallles eventos */
+    .detalle-evento{
+      margin-top: 20px;
+      border-bottom: 1px solid gray;
+    }
+    .detalle-evento:nth-child(2){
+      border: none;
+    }
+
+    /* Invitados */
+    .lista-invitados{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 10px;
+      list-style: none;
+    }
+    .lista-invitados li img{
+      width: 100%;
+    }
+
+
 
 /* ==========================================================================
    Helper classes
