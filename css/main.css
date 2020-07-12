@@ -170,6 +170,15 @@ textarea {
       background-color: white;
       color: var(--color-primario)
     }
+    .button.transparente{
+      background-color: transparent;
+      border: 1px solid #fff;
+    }
+    .button.transparente:hover{
+      border: 1px solid var(--color-primario);  
+      background-color: var(--color-primario);
+    }
+
     .float-right{
       float: right;
     }
@@ -561,6 +570,104 @@ textarea {
       height: 450px;
       background-color: green;
     }
+
+    /* testimoniales */
+    .testimoniales{
+      padding-bottom: 20px;
+    }
+    .testimonial{
+      margin: 5px;
+    }
+   
+
+    @media (min-width: 950px){
+      .testimonial{
+        float: right;
+        width: 30%;     
+      }
+      
+    }
+
+    blockquote{
+      margin: 0 0 10px 0;
+      border: 1px solid #e1e1e1;
+      background-color: #fff;
+      padding-bottom: 20px;
+      position: relative;
+    }
+
+    blockquote p{
+      text-align: justify !important;
+      font-size: 1em !important;
+      font-family: var(--funte2);
+      padding: 0 20px 0 65px;
+    }
+    blockquote p::before{
+      content: '\201c';
+      position: absolute;
+      left: 13px;
+      top: 10px;
+      font-size: 8em;
+      margin: 0;
+      padding: 0;
+      line-height: 1;
+      color: var(--color-primario);
+    }
+
+    footer.info-testimoniales{
+      padding: 0;
+    }
+    footer.info-testimoniales img{
+      float: left;
+      width: 20%;
+      border-radius: 50%;
+      margin-left: 20px;
+    }
+    footer.info-testimoniales cite{
+      text-align: left;
+      color: var(--color-primario);
+      font-size: 12px;
+      padding-top: 8px;
+      width: 66.6%;
+      float: right;
+      font-style: normal;
+      font-weight: bold;
+
+    }
+    footer.info-testimoniales cite span{
+      color: #000;
+      display: block;
+      text-transform: none;
+      margin-top: 5px;
+    }
+    .newsletter{
+      position: relative;
+      height: auto;
+    }
+
+    .newsletter::before{
+      background-image: url('../img/bg-newsletter.jpg');
+      content: '';
+    }
+    .newsletter .contenido{
+      padding: 100px 0;
+      color: #fff;
+      text-align: center;
+      position: relative;
+    }
+    .newsletter .contenido p{
+      text-transform: lowercase;
+      font-size: 1.2em;
+    }
+    .newsletter .contenido h3{
+      text-transform: uppercase;
+      font-family: var(--funte2);
+      font-size: 7vw;
+      color: #fff;
+    }
+
+
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
