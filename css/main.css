@@ -161,9 +161,14 @@ textarea {
       background: var(--color-primario);
       margin-top: 20px;
       padding: 10px 40px;
+      border: 2px solid var(--color-primario);
     }
     .button:hover{
       background: #e33000;
+    }
+    .button.hollow{
+      background-color: white;
+      color: var(--color-primario)
     }
     .float-right{
       float: right;
@@ -417,7 +422,7 @@ textarea {
       width: 100%;
       filter: grayscale(100%);
       -webkit-filter: grayscale(1);
-      transition: all .3s ease-in-out;
+      transition: all .5s ease-in-out;
     }
     .invitado:hover img{
       filter: grayscale(0%);
@@ -428,7 +433,10 @@ textarea {
         grid-template-columns: repeat(3, 1fr);
       }
     }
-
+    .invitado:hover p{
+      bottom: -80px;
+      opacity: 0;
+    }
     .invitado{
       position: relative;
       font-family: var(--funte1);
@@ -444,9 +452,115 @@ textarea {
       background-color: rgba(0, 0, 0, .6);
       width: 100%;
       text-transform: uppercase;
+      transition: all .5s ease-in-out;
     }
-    
 
+    /* Contador */
+    .parallax::before{
+      height: 100%;
+      width: 100%;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      position: absolute;
+      top: 0;
+      left: 0;
+      filter: brightness(.8);
+
+    }
+    .contador{
+      position: relative;
+      height: auto;
+    }
+    .contador::before{
+      background-image: url('../img/bg-resumen.jpg');
+      content: "";
+    }
+    .resumen-evento{
+      position: relative;
+      padding: 120px 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 50px;
+    }
+
+    .resumen-evento li {
+      text-align: center;
+      color: #fff;
+      text-transform: uppercase;
+      font-family: var(--funte1);
+      font-size: 24px;
+    }
+    p.numero{
+       font-size: 4em;
+       font-family: var(--funte1);
+       color: var(--color-primario);
+       display: block;
+       margin: 0 0 10px 0;
+    }
+    @media (min-width: 768px){
+      .resumen-evento{
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    /* tablas de precios */
+    ul.lista-precios > li{
+      padding: 10px;
+    }
+    @media (min-width: 768px){
+      .lista-precios{
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+    .tabla-precio{
+      border: 1px solid #e1e1e1;
+      background-color: #fff;
+      text-align: center;
+      padding: 40px 50px; 
+    }
+    .tabla-precio:hover{
+      transform: scale(1.1) translatex(10px);
+      border: 1px solid var(--color-primario);
+      box-shadow: 0 0 30px #a5a2a2;
+      transition: all .3s ease-in-out;
+    }
+    .tabla-precio ul li{
+      font-family: var(--funte2);
+      font-size: 12px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      text-align: left;
+      color: #868686;
+      line-height: 26px;
+    }
+    .tabla-precio ul li::before{
+      font-family: 'FontAwesome';
+      display: inline-block;
+      vertical-align: top;
+      padding: 0 5px;
+      font-size: 20px;
+      color: green;
+      content: "\f00c";
+    }
+
+    .tabla-precio h3{
+      font-family: var(--funte1);
+      font-size: 16px;
+      text-transform: uppercase;
+    }
+    .tabla-precio .numero{
+      color: #000;
+      margin: 20px 0;
+    }
+
+    /* mapa */
+    .mapa{
+      height: 450px;
+      background-color: green;
+    }
 /* ==========================================================================
    Helper classes
    ========================================================================== */
