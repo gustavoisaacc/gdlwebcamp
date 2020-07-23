@@ -665,9 +665,64 @@ textarea {
       font-size: 7vw;
       color: #fff;
     }
+    /* cuenta regresiva */
+    .cuenta-regresiva ul li{
+      text-transform: uppercase;
+      font-size: 1.5rem;
+      text-align: center;
+      font-family: var(--funte1);
+    }
 
+    @media (min-width: 768px){
+      .cuenta-regresiva ul li{
+        width: 25%;
+        float: left; 
+      }
+    }
 
+    /* footer */
+    footer.site-footer{
+      background-color: #353535;
+      padding: 20px 0;
+      margin-top: 20px;
+    }
 
+    footer .contenido > div{
+      color: #fff;
+      padding: 0 20px;
+      font-size: 12px;
+      /* text-align-last: justify; */
+    }
+    @media (min-width: 768px){
+      footer .contenido > div{
+        width: 33.3%;
+        float: left;
+      }
+
+    }
+
+    footer h3{
+      color: #fff;
+      text-transform: uppercase;
+      font-family: var(--funte1);
+      margin-bottom: 20px;
+    }
+
+    footer h3 span{
+      color: var(--color-primario);
+    }
+
+    footer .ultimos-tweets li{
+      margin-bottom: 10px;
+    }
+
+    .copyright{
+      background-color: #2e2e2e;
+      color: #fff;
+      text-align: center;
+      margin: 0;
+      padding: 20px 0;
+    }
 /* ==========================================================================
    Helper classes
    ========================================================================== */
