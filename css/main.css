@@ -847,6 +847,20 @@ textarea {
       clear: both;
     }
 
+    .contenedor-talleres{
+      position: relative;
+    }
+    .info-curso{
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .ocultar{
+      display: none;
+    }
+    .show{
+      display: block;
+    }
 /* ==========================================================================
    Helper classes
    ========================================================================== */

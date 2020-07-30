@@ -1,5 +1,7 @@
 (function(){
   "use strict"
+  //MAPA
+
   let regalo = document.getElementById('regalo')
   lat: -27.474998874469186
   lng: -64.81933593750001
@@ -15,6 +17,27 @@
         .openPopup()
         .bindTooltip('gdlwebcamp')
         .openTooltip()
+
+  const menuNav = document.querySelectorAll('.menu-talleres a')
+ 
+  menuNav.forEach( (menu) => {
+   
+    menu.addEventListener('click', () => {
+      const enlace = menu.getAttribute('href').slice(1)
+      const tabs = document.querySelectorAll('.info-curso')
+      tabs.forEach( tab => tab.classList.remove('show')) 
+      const talleres = document.getElementById(enlace)
+   
+        talleres.classList.add('show')
+    
+      
+      return false
+     
+    })
+    
+   
+  })
+    
     //formulario datos
     const nombre = document.getElementById('nombre')
     const apellido = document.getElementById('apellido')
@@ -120,8 +143,11 @@
         document.getElementById(diasElejidos[i]).style.display= "block"
       }
     }
-
     
+    //tap 
 
+
+
+  
   })//domcontentloaded
 })()
