@@ -9,45 +9,46 @@
   document.addEventListener('DOMContentLoaded', function(){
     var map = L.map('mapa').setView([-27.057119, -65.404513], 16);
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
-
-    L.marker([-27.057119, -65.404513]).addTo(map)
-        .bindPopup('GDLWEBCAMP.<br> BOLETOS DISPONIBLES.')
-        .openPopup()
-        .bindTooltip('gdlwebcamp')
-        .openTooltip()
-
-  const menuNav = document.querySelectorAll('.menu-talleres a')
- 
-  menuNav.forEach( (menu, i) => {
-   
-    menu.addEventListener('click', (e) => {
-      e.preventDefault()
-      const enlaces = menu.getAttribute('href')
-      const enlace = enlaces.slice(1)
-
-      const tabs = document.querySelectorAll('.info-curso')
-    
-      tabs.forEach( tab => {tab.classList.remove('show')} ) 
-      const talleres = document.getElementById(enlace)
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(map);
   
-      talleres.classList.add('show')
-
-      const menuNav = document.querySelectorAll('.menu-talleres a')
-     
-
-      menuNav.forEach(menua => menua.classList.remove('activo'))
-    
-      e.target.classList.add('activo')
+      L.marker([-27.057119, -65.404513]).addTo(map)
+          .bindPopup('GDLWEBCAMP.<br> BOLETOS DISPONIBLES.')
+          .openPopup()
+          .bindTooltip('gdlwebcamp')
+          .openTooltip()
       
-      return false
+  
+    const menuNav = document.querySelectorAll('.menu-talleres a')
+   
+    menuNav.forEach( (menu, i) => {
+     
+      menu.addEventListener('click', (e) => {
+        e.preventDefault()
+        const enlaces = menu.getAttribute('href')
+        const enlace = enlaces.slice(1)
+  
+        const tabs = document.querySelectorAll('.info-curso')
+      
+        tabs.forEach( tab => {tab.classList.remove('show')} ) 
+        const talleres = document.getElementById(enlace)
+    
+        talleres.classList.add('show')
+  
+        const menuNav = document.querySelectorAll('.menu-talleres a')
+       
+  
+        menuNav.forEach(menua => menua.classList.remove('activo'))
+      
+        e.target.classList.add('activo')
+        
+        return false
+       
+      })
+      
      
     })
-    
-   
-  })
     
     //formulario datos
     const nombre = document.getElementById('nombre')
@@ -133,7 +134,6 @@
       }
 
     }
-
     function mostrarDias (){
       const paseDia = parseInt(pase_dia.value, 10) || 0,
       pase2Dias = parseInt(pase_dos_dias.value,10) || 0,
@@ -153,11 +153,24 @@
       for(let i = 0; i < diasElejidos.length; i++){
         document.getElementById(diasElejidos[i]).style.display= "block"
       }
-    }
-    
-    //tap 
 
+     
+    }    
 
   })//domcontentloaded
 })()
 
+//SCROLL MENU
+const header = document.querySelector('header').clientHeight
+window.onscroll = ()=> {
+  if(header < window.scrollY){
+    const menu = document.getElementById('nav')
+    menu.classList.add('pagadiso')
+   
+  }else{
+    const menu = document.getElementById('nav')
+    menu.classList.remove('pagadiso')
+  }
+}
+
+console.log(header)
