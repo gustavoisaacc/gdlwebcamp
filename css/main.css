@@ -394,7 +394,7 @@ textarea {
       display: block;
       text-align: center;
       color: #000;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
     }
     @media (min-width: 768px){
       .menu-talleres{
@@ -847,6 +847,7 @@ textarea {
       clear: both;
     }
 
+    /* menu con tabs  */
     .contenedor-talleres{
       position: relative;
     }
@@ -860,6 +861,22 @@ textarea {
     }
     .show{
       display: block;
+    }
+    .menu-talleres a{
+      position: relative;
+    }
+    a.activo::after{
+      content: '';
+      position: absolute;
+      top: 35px;
+      right: 0;
+      left: 0;
+      margin-left: auto;
+      margin-right: auto;
+      height: 20px;
+      width: 20px;
+      background: url('../img/talleres-flecha.jpg');
+      background-repeat: no-repeat;
     }
 /* ==========================================================================
    Helper classes

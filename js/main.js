@@ -1,5 +1,6 @@
 (function(){
   "use strict"
+
   //MAPA
 
   let regalo = document.getElementById('regalo')
@@ -20,16 +21,26 @@
 
   const menuNav = document.querySelectorAll('.menu-talleres a')
  
-  menuNav.forEach( (menu) => {
+  menuNav.forEach( (menu, i) => {
    
-    menu.addEventListener('click', () => {
-      const enlace = menu.getAttribute('href').slice(1)
+    menu.addEventListener('click', (e) => {
+      e.preventDefault()
+      const enlaces = menu.getAttribute('href')
+      const enlace = enlaces.slice(1)
+
       const tabs = document.querySelectorAll('.info-curso')
-      tabs.forEach( tab => tab.classList.remove('show')) 
-      const talleres = document.getElementById(enlace)
-   
-        talleres.classList.add('show')
     
+      tabs.forEach( tab => {tab.classList.remove('show')} ) 
+      const talleres = document.getElementById(enlace)
+  
+      talleres.classList.add('show')
+
+      const menuNav = document.querySelectorAll('.menu-talleres a')
+     
+
+      menuNav.forEach(menua => menua.classList.remove('activo'))
+    
+      e.target.classList.add('activo')
       
       return false
      
@@ -147,7 +158,6 @@
     //tap 
 
 
-
-  
   })//domcontentloaded
 })()
+
