@@ -2,53 +2,13 @@
   "use strict"
 
   //MAPA
+  
 
   let regalo = document.getElementById('regalo')
   lat: -27.474998874469186
   lng: -64.81933593750001
   document.addEventListener('DOMContentLoaded', function(){
-    var map = L.map('mapa').setView([-27.057119, -65.404513], 16);
-
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-      }).addTo(map);
-  
-      L.marker([-27.057119, -65.404513]).addTo(map)
-          .bindPopup('GDLWEBCAMP.<br> BOLETOS DISPONIBLES.')
-          .openPopup()
-          .bindTooltip('gdlwebcamp')
-          .openTooltip()
-      
-  
-    const menuNav = document.querySelectorAll('.menu-talleres a')
-   
-    menuNav.forEach( (menu, i) => {
-     
-      menu.addEventListener('click', (e) => {
-        e.preventDefault()
-        const enlaces = menu.getAttribute('href')
-        const enlace = enlaces.slice(1)
-  
-        const tabs = document.querySelectorAll('.info-curso')
-      
-        tabs.forEach( tab => {tab.classList.remove('show')} ) 
-        const talleres = document.getElementById(enlace)
     
-        talleres.classList.add('show')
-  
-        const menuNav = document.querySelectorAll('.menu-talleres a')
-       
-  
-        menuNav.forEach(menua => menua.classList.remove('activo'))
-      
-        e.target.classList.add('activo')
-        
-        return false
-       
-      })
-      
-     
-    })
     
     //formulario datos
     const nombre = document.getElementById('nombre')
@@ -174,3 +134,46 @@ window.onscroll = ()=> {
 }
 
 console.log(header)
+
+var map = L.map('mapa').setView([-27.057119, -65.404513], 16);
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(map);
+  
+      L.marker([-27.057119, -65.404513]).addTo(map)
+          .bindPopup('GDLWEBCAMP.<br> BOLETOS DISPONIBLES.')
+          .openPopup()
+          .bindTooltip('gdlwebcamp')
+          .openTooltip()
+      
+  
+    const menuNav = document.querySelectorAll('.menu-talleres a')
+   
+    menuNav.forEach( (menu, i) => {
+     
+      menu.addEventListener('click', (e) => {
+        e.preventDefault()
+        const enlaces = menu.getAttribute('href')
+        const enlace = enlaces.slice(1)
+  
+        const tabs = document.querySelectorAll('.info-curso')
+      
+        tabs.forEach( tab => {tab.classList.remove('show')} ) 
+        const talleres = document.getElementById(enlace)
+    
+        talleres.classList.add('show')
+  
+        const menuNav = document.querySelectorAll('.menu-talleres a')
+       
+  
+        menuNav.forEach(menua => menua.classList.remove('activo'))
+      
+        e.target.classList.add('activo')
+        
+        return false
+       
+      })
+      
+     
+    })
